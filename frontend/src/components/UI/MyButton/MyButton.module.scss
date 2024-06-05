@@ -1,0 +1,15 @@
+@import "../../../colors.scss";
+.button {
+  height: 60px;
+  width: 100%;
+  border: 2px solid $purple;
+  border-radius: 40px;
+  background-color: $white1;
+  color: $text;
+  cursor: pointer;
+
+  &:hover {
+    background-color: $purple;
+    color: $white1;
+  }
+}

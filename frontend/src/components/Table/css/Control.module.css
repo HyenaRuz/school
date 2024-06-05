@@ -1,0 +1,34 @@
+.control {
+  display: flex;
+  justify-content: space-between;
+  padding-bottom: 40px;
+}
+.control_input {
+  width: 350px;
+  height: 60px;
+  border-radius: 40px;
+  background: #FFFFFF;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 0px 32px 0px 32px;
+  gap: 16px;
+}
+.control_input input {
+  width: 100%;
+  font-size: 1.8rem;
+  color: #303972;
+}
+.control_input_img {
+  width: 32px;
+  height: 32px;
+}
+.control_select {
+  width: 230px;
+  height: 60px;
+  padding: 16px 43px;
+  border-radius: 40px;
+  border: 2px solid #4d44b5;
+  font-size: 1.8rem;
+  color: #303972;
+}/*# sourceMappingURL=Control.module.css.map */

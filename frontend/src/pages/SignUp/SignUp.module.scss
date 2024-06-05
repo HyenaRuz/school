@@ -1,0 +1,60 @@
+@import "../../colors.scss";
+
+.signup {
+  background-color: $background;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 2%;
+
+  &_wrapper {
+    background-color: $white1;
+    overflow: hidden;
+    position: relative;
+    border-radius: 20px;
+    width: max-content;
+
+    &_title {
+      background-color: $purple;
+      height: 60px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 40px 0 40px;
+      h4 {
+        color: $white1;
+      }
+    }
+    &_form {
+      padding: 40px;
+    }
+  }
+}
+
+@media screen and (max-width: 770px) {
+  .signup {
+    &_wrapper {
+      &_form {
+        padding: 15px;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 320px) {
+  .signup {
+    margin-top: 0;
+
+    &_wrapper {
+      border-radius: 0px;
+
+      &_title {
+        padding: 0 10px 0 10px;
+      }
+      &_form {
+        padding: 10px;
+      }
+    }
+  }
+}

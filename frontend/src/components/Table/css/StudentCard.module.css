@@ -1,0 +1,47 @@
+.studentCard {
+  width: 680px;
+  height: 880px;
+  opacity: 1;
+  background-color: #FFFFFF;
+  border-radius: 20px;
+  transition: opacity 300ms, width 300ms;
+  overflow: hidden;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  z-index: 0;
+  padding: 30px;
+}
+.studentCard_headerDecoration {
+  position: absolute;
+  background-color: #4d44b5;
+  width: 100%;
+  height: 160px;
+  top: 0;
+  left: 0;
+  z-index: -1;
+}
+.studentCard_avatar {
+  border-radius: 50%;
+  width: 165px;
+  border: 10px solid #FFFFFF;
+}
+.studentCard_info {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.studentCard_info_name {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.studentCard_info_contact {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.studentCard.deactivate {
+  width: 0px;
+  opacity: 0;
+}/*# sourceMappingURL=StudentCard.module.css.map */

@@ -1,0 +1,26 @@
+@import "../../../colors.scss";
+.weekdays {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 40px;
+  color: $gray3;
+
+  &_dayOfWeek {
+    width: 110px;
+    text-align: center;
+  }
+
+  &_columns {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 10px;
+    row-gap: 10px;
+  }
+}
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  padding: 32px;
+}

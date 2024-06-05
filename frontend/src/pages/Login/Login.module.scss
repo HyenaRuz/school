@@ -1,0 +1,49 @@
+@import "../../colors.scss";
+
+.login {
+  background-color: $background;
+  position: relative;
+  height: 60vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  &_wrapper {
+    background-color: $white1;
+    overflow: hidden;
+    position: relative;
+    border-radius: 20px;
+    width: max-content;
+
+    &_title {
+      background-color: $purple;
+      height: 60px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 40px 0 40px;
+      h4 {
+        color: $white1;
+      }
+    }
+    &_form {
+      padding: 40px;
+    }
+  }
+}
+
+@media screen and (max-width: 320px) {
+  .login {
+    &_wrapper {
+      width: 100%;
+      border-radius: 0;
+      &_title {
+        padding: 10px;
+      }
+
+      &_form {
+        padding: 10px;
+      }
+    }
+  }
+}

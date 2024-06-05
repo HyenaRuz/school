@@ -1,0 +1,105 @@
+@import "../../../colors.scss";
+
+.sideMenu {
+  background-color: $purple;
+  display: flex;
+  gap: 50px;
+  transition: all 300ms ease;
+  justify-content: space-around;
+
+  position: fixed;
+  bottom: 0;
+  z-index: 200;
+  height: 60px;
+  width: 100%;
+
+  &_logo {
+    width: 48px;
+    height: 48px;
+    flex-shrink: 0;
+    border-radius: 16px;
+    background: $orange;
+    transition: all 300ms;
+    color: $white1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: auto 0 auto 0;
+  }
+
+  &_nav {
+    display: flex;
+    gap: 8px;
+
+    &_button {
+      display: flex;
+      padding: 16px 16px;
+      align-items: center;
+      gap: 24px;
+      border-radius: 0px 0px 40px 40px;
+      color: $gray2;
+      width: 70px;
+      justify-content: center;
+      cursor: pointer;
+
+      &_icon {
+        width: 40px;
+        height: 40px;
+        & * {
+          fill: $gray2;
+        }
+      }
+    }
+
+    .active_link {
+      color: $purple;
+      background-color: $background;
+    }
+
+    .active_link .sideMenu_nav_button_icon * {
+      fill: $purple;
+    }
+  }
+
+  &_control {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+
+    // &.active {
+    // }
+  }
+  &_menuIcon {
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 5px;
+
+    position: absolute;
+    top: 15px;
+    right: 30px;
+
+    &_bar {
+      width: 100%;
+      height: 4px;
+      background-color: $white1;
+      transition: all 0.3s ease;
+      border-radius: 500px;
+    }
+
+    .cross &_bar:nth-child(1) {
+      transform: translateY(9px) rotate(45deg);
+    }
+
+    .cross &_bar:nth-child(2) {
+      opacity: 0;
+    }
+
+    .cross &_bar:nth-child(3) {
+      transform: translateY(-9px) rotate(-45deg);
+    }
+  }
+}

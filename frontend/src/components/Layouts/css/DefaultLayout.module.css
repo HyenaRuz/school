@@ -1,0 +1,9 @@
+.wrapper {
+  display: flex;
+}
+
+.holder {
+  width: 100%;
+  padding: 40px 50px;
+  overflow: hidden;
+}/*# sourceMappingURL=DefaultLayout.module.css.map */

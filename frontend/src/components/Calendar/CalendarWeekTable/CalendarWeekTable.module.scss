@@ -1,0 +1,78 @@
+@import "../../../colors.scss";
+
+.calendar {
+  width: 100%;
+  padding: 32px 32px 32px 12px;
+
+  &_table {
+    width: 100%;
+    table-layout: fixed;
+  }
+
+  &_title {
+    color: $text;
+    text-align: center;
+    vertical-align: middle;
+    padding: 10px;
+  }
+
+  &_cell {
+    border: 1px solid $gray2;
+    width: calc(100% / 7);
+    height: 122px;
+    padding: 3px;
+    text-align: center;
+    vertical-align: middle;
+    position: relative;
+  }
+}
+
+.addEvent {
+  opacity: 0;
+  transition: 300ms all;
+
+  &:hover {
+    opacity: 1;
+  }
+}
+
+@media screen and (max-width: 770px) {
+  .calendar {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+
+    &_title {
+      padding: 0 0 5px 0;
+    }
+
+    &_cell {
+      padding: 1px;
+      height: auto;
+    }
+  }
+}
+
+@media screen and (max-width: 430px) {
+  .calendar {
+    padding: 2%;
+
+    &_table {
+      tr {
+        height: 60px;
+      }
+    }
+
+    th.calendar_title {
+      transform: rotate(-45deg);
+    }
+  }
+}
+
+@media screen and (max-width: 320px) {
+  .calendar {
+    &_cell {
+      padding: 0;
+    }
+  }
+}

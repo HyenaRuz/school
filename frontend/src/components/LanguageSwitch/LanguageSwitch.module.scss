@@ -1,0 +1,44 @@
+@import "../../colors.scss";
+
+.switch {
+  display: flex;
+  gap: 4px;
+  justify-content: center;
+  &_button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 30px;
+    border-radius: 10px;
+    overflow: hidden;
+
+    &.active {
+      border: 3px solid $white1;
+    }
+
+    img {
+      height: 100%;
+      max-width: 100%;
+      object-fit: cover;
+    }
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  .switch {
+    flex-direction: column;
+    gap: 10px;
+
+    &_button {
+      width: 50px;
+      height: 40px;
+    }
+  }
+}
+@media screen and (max-width: 770px) {
+  .switch {
+    flex-direction: row;
+    gap: 10px;
+  }
+}

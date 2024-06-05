@@ -1,0 +1,60 @@
+@import "../../../colors.scss";
+.wrapper {
+  position: relative;
+  padding: 32px;
+  overflow: hidden;
+
+  &_weekdays {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 40px;
+    color: $gray3;
+
+    &_day {
+      width: 110px;
+      text-align: center;
+    }
+  }
+
+  &_days {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    grid-row-gap: 32px;
+    grid-column-gap: 3%;
+    margin-top: 24px;
+  }
+}
+@media screen and (max-width: 770px) {
+  .wrapper {
+    padding: 3%;
+    width: 100%;
+
+    &_weekdays {
+      margin-top: 20px;
+    }
+
+    &_days {
+      grid-row-gap: 12px;
+      grid-column-gap: 12px;
+    }
+  }
+}
+
+@media screen and (max-width: 430px) {
+  .wrapper {
+    padding: 2%;
+
+    &_weekdays {
+      margin-top: 30px;
+
+      &_day {
+        transform: rotate(-45deg);
+      }
+    }
+
+    &_days {
+      grid-row-gap: 2px;
+      grid-column-gap: 2px;
+    }
+  }
+}

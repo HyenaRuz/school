@@ -1,0 +1,68 @@
+@import "../../../colors.scss";
+
+.controll {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: row;
+  width: 100%;
+  &_title {
+    color: $text;
+  }
+
+  &_buttons {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    align-items: center;
+    color: $text;
+
+    &_button {
+      cursor: pointer;
+    }
+
+    &_arrowLeft {
+      transform: rotate(90deg);
+    }
+
+    &_arrowRight {
+      transform: rotate(-90deg);
+    }
+  }
+}
+
+.form {
+  display: flex;
+  gap: 24px;
+
+  &_select {
+    width: 207px;
+    height: 60px;
+    padding: 16px 43px;
+    border-radius: 40px;
+    border: 2px solid $purple;
+    box-shadow: 0px 20px 50px 0px rgba(191, 21, 108, 0.05);
+
+    color: $purple;
+    font-size: 1.8rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+
+    background-image: url(../../../images/svg/icon-dropdown.svg);
+    background-repeat: no-repeat;
+    background-position: right 43px center;
+    background-size: 32px 32px;
+
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+  }
+}
+
+@media screen and (max-width: 430px) {
+  .controll {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+}

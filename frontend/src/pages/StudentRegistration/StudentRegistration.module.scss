@@ -1,0 +1,25 @@
+@import "../../colors.scss";
+
+.wrapper {
+  background-color: $white1;
+  overflow: hidden;
+  position: relative;
+  border-radius: 20px;
+  width: max-content;
+  margin: auto;
+
+  &_title {
+    background-color: $purple;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0px 40px 0px 40px;
+    h4 {
+      color: $white1;
+    }
+  }
+  &_form {
+    padding: 40px;
+  }
+}

@@ -1,0 +1,52 @@
+@import "../../colors.scss";
+.InfoButton {
+  display: flex;
+  gap: 16px;
+
+  &_holder {
+    cursor: pointer;
+    position: relative;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(77, 68, 181, 0.1);
+    border-radius: 50%;
+
+    svg {
+      width: 24px;
+      height: 24px;
+    }
+
+    &:hover {
+      background-color: $purple;
+      svg * {
+        fill: $white1;
+      }
+    }
+  }
+
+  &_modal {
+    position: absolute;
+    opacity: 0;
+    transition: 300ms all;
+    width: max-content;
+    top: 46px;
+    left: 50%;
+    transform: translateX(-50%);
+    overflow: hidden;
+    z-index: -10;
+
+    &.active {
+      opacity: 1;
+      display: block;
+      position: absolute;
+      background-color: $white1;
+      padding: 10px;
+      z-index: 10;
+      border: 1px solid $purple;
+      border-radius: 10px;
+    }
+  }
+}

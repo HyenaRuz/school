@@ -1,0 +1,129 @@
+@import "../../../colors.scss";
+.studentCard {
+  width: 680px;
+  height: max-content;
+  opacity: 1;
+  background-color: $white1;
+  border-radius: 20px;
+  transition: opacity 300ms, width 300ms;
+  overflow: hidden;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  z-index: 0;
+  padding: 30px;
+
+  &_headerDecoration {
+    position: absolute;
+    background-color: $purple;
+    width: 100%;
+    height: 160px;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-end;
+    padding: 30px;
+  }
+
+  &_avatar {
+    border-radius: 50%;
+    width: 185px;
+    height: 185px;
+    border: 10px solid $white1;
+    background-color: $white1;
+  }
+
+  &_info {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+
+    &_name {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    &_contact {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+  }
+
+  &.deactivate {
+    width: 0px;
+    opacity: 0;
+    position: absolute;
+    right: 0;
+  }
+}
+
+@media screen and (max-width: 770px) {
+  .studentCard {
+    position: absolute;
+    right: 3%;
+    width: 500px;
+    box-shadow: 0px 0px 30px rgba(0, 0, 0, 0.5);
+
+    &.deactivate {
+      height: 652px;
+    }
+  }
+}
+
+@media screen and (max-width: 430px) {
+  .studentCard {
+    width: 94%;
+
+    &_headerDecoration {
+      height: 95px;
+      padding: 15px;
+    }
+
+    &_avatar {
+      border-radius: 50%;
+      width: 120px;
+      height: 120px;
+      border: 10px solid $white1;
+      background-color: $white1;
+    }
+
+    &_info {
+      &_contact {
+        gap: 10px;
+        flex-direction: column;
+        align-items: start;
+      }
+    }
+
+    &.deactivate {
+      position: absolute;
+      top: 0;
+      right: 0;
+    }
+  }
+}
+
+@media screen and (max-width: 320px) {
+  .studentCard {
+    width: 94vw;
+    padding: 10px;
+    right: 3vw;
+    height: auto;
+
+    &_headerDecoration {
+      height: 65px;
+      padding: 15px;
+    }
+
+    &_avatar {
+      border-radius: 50%;
+      width: 100px;
+      height: 100px;
+      border: 10px solid $white1;
+      background-color: $white1;
+    }
+  }
+}

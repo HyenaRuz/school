@@ -1,0 +1,158 @@
+@import "../../../colors.scss";
+
+.day {
+  width: 100%;
+  min-width: 85px;
+  height: 130px;
+  flex-shrink: 0;
+  border-radius: 14px;
+  border: 2px solid $text;
+  background: $white1;
+  position: relative;
+  cursor: pointer;
+  z-index: 10;
+  color: $text;
+  display: flex;
+  flex-direction: column-reverse;
+  padding-bottom: 20px;
+  align-items: center;
+
+  &.active {
+    &::after {
+      content: "";
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: calc(100% - 14px);
+      height: calc(100% - 14px);
+      transform: translate(-50%, -50%);
+      border: 6px solid;
+      border-radius: 11px;
+    }
+  }
+
+  &_namber {
+    position: absolute;
+    top: 10px;
+    left: 20px;
+  }
+
+  &_circle {
+    width: 29px;
+    height: 29px;
+    border: 2px solid $white1;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: $purple;
+    overflow: hidden;
+
+    &.missed {
+      background-color: $red;
+    }
+
+    &.rescheduled {
+      background-color: $yellow;
+    }
+
+    &.conducted {
+      background-color: $green;
+    }
+
+    &.cancelled {
+      background-color: $orange;
+    }
+
+    & + & {
+      margin-left: -10px;
+    }
+
+    &_img {
+      width: 26px;
+      height: 26px;
+    }
+    &_text {
+      color: $white1;
+      width: 29px;
+      text-align: center;
+    }
+  }
+
+  &.today {
+    color: $white1;
+
+    &::before {
+      content: "";
+      position: absolute;
+      top: 1px;
+      left: 1px;
+      width: calc(100% - 2px);
+      height: calc(100% - 2px);
+      border-radius: 11px;
+      background: $purple;
+      z-index: -10;
+    }
+  }
+  &.missed &_circle {
+    background-color: $red;
+  }
+
+  &.rescheduled {
+    &_circle {
+      background-color: $yellow;
+    }
+  }
+
+  &.conducted {
+    &_circle {
+      background-color: $green;
+    }
+  }
+
+  &.cancelled {
+    &_circle {
+      background-color: $orange;
+    }
+  }
+
+  &_holder {
+    display: flex;
+  }
+}
+
+@media screen and (max-width: 430px) {
+  .day {
+    min-width: 0px;
+    padding-bottom: 10px;
+    height: 110px;
+    border-radius: 10px;
+
+    &_holder {
+      flex-direction: column;
+    }
+    &_circle {
+      & + & {
+        margin: -10px 0 0 0;
+      }
+    }
+    &.today {
+      &::before {
+        border-radius: 8px;
+      }
+    }
+    &_namber {
+      transform: translateX(-50%);
+      left: 50%;
+    }
+
+    &.active {
+      &::after {
+        border: 5px solid;
+        width: calc(100% - 12px);
+        height: calc(100% - 12px);
+        border-radius: 8px;
+      }
+    }
+  }
+}

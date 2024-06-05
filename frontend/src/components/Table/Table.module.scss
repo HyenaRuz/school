@@ -1,0 +1,257 @@
+@import "../../colors.scss";
+
+.wrapper {
+  width: 100%;
+  background-color: $white1;
+  border-radius: 20px;
+  transition: 300ms all;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  position: relative;
+
+  &.active {
+    width: 61%;
+  }
+}
+.table {
+  width: 100%;
+  color: $text;
+
+  &_thead {
+    text-align: justify;
+
+    &_th {
+      padding: 34px 32px 34px 32px;
+      color: $text;
+
+      &:nth-child(1) {
+        width: 30%;
+      }
+
+      &:nth-child(2) {
+        width: 20%;
+      }
+
+      &:nth-child(3) {
+        width: 10%;
+      }
+    }
+  }
+
+  &_row {
+    position: relative;
+
+    &_td {
+      padding-left: 32px;
+      padding-right: 32px;
+      vertical-align: middle;
+      border-top: 1px solid #dbdbdb;
+
+      &.active {
+        // background-color: $orange;
+
+        &::before {
+          content: "";
+          position: absolute;
+          top: 50%;
+          left: 0;
+          width: 5px;
+          height: 99%;
+          background-color: $purple;
+          transform: translateY(-50%);
+        }
+      }
+    }
+  }
+
+  &_img {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    margin: 32px 0 32px 0;
+
+    background-color: $purple;
+    color: $white1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  &_button {
+    transition: 100ms all;
+    svg {
+      z-index: 50;
+      cursor: pointer;
+      width: 28px;
+      height: 28px;
+      * {
+        fill: $gray3;
+      }
+    }
+    &:hover * {
+      transition: 100ms all;
+      fill: $purple;
+    }
+  }
+}
+
+.pages {
+  display: flex;
+  gap: 16px;
+
+  &_button {
+    width: 50px;
+    height: 50px;
+    border: 2px solid $gray3;
+    border-radius: 50%;
+    color: $gray3;
+
+    &.active {
+      border: none;
+      color: $white1;
+      background-color: $purple;
+    }
+  }
+
+  &_left {
+    &_svg {
+      transform: rotate(90deg);
+      & * {
+        fill: $gray3;
+      }
+    }
+  }
+  &_right {
+    &_svg {
+      transform: rotate(-90deg);
+      & * {
+        fill: $gray3;
+      }
+    }
+  }
+}
+
+.fotter {
+  display: flex;
+  justify-content: space-between;
+  padding: 32px;
+  align-items: center;
+
+  &_text {
+    display: flex;
+    color: $gray3;
+    gap: 5px;
+
+    h6 {
+      font-weight: 400;
+    }
+
+    &_p {
+      color: $text;
+    }
+  }
+}
+
+.myCell {
+  display: flex;
+  gap: 16px;
+}
+
+@media screen and (max-width: 1024px) {
+  .table {
+    &_header {
+      &_th {
+        padding: 24px 22px 24px 22px;
+      }
+    }
+
+    &_row {
+      &_td {
+        padding-left: 10px;
+        padding-right: 10px;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 770px) {
+  .wrapper {
+    &.active {
+      width: 100%;
+    }
+  }
+}
+
+@media screen and (max-width: 430px) {
+  .fotter {
+    padding: 15px;
+    flex-direction: column-reverse;
+    gap: 15px;
+  }
+
+  .pages {
+    &_button {
+      width: 40px;
+      height: 40px;
+    }
+  }
+
+  .table {
+    &_img {
+      margin: 12px 0 12px 0;
+      width: 40px;
+      height: 40px;
+    }
+
+    &_row {
+      &_td {
+        padding-left: 5px;
+        padding-right: 5px;
+      }
+    }
+
+    &_thead {
+      &_th {
+        padding: 24px 22px 24px 22px;
+        &:nth-child(1) {
+          width: auto;
+        }
+
+        &:nth-child(2) {
+          width: auto;
+        }
+
+        &:nth-child(3) {
+          width: auto;
+        }
+      }
+    }
+  }
+}
+@media screen and (max-width: 375px) {
+  .table {
+    &_row {
+      td {
+        &:nth-child(3) {
+          display: none;
+        }
+      }
+    }
+    &_thead {
+      &_th {
+        padding: 24px 22px 24px 22px;
+        &:nth-child(1) {
+          width: auto;
+        }
+
+        &:nth-child(2) {
+          width: auto;
+        }
+
+        &:nth-child(3) {
+          display: none;
+        }
+      }
+    }
+  }
+}

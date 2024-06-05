@@ -1,0 +1,63 @@
+@import "../../../colors.scss";
+
+.scheduleDetails {
+  gap: 30px;
+
+  position: relative;
+  opacity: 1;
+  transition: 300ms all;
+
+  &.deactivate {
+    width: 0;
+    opacity: 0;
+    position: absolute;
+  }
+
+  &_title {
+    display: flex;
+    justify-content: space-between;
+    padding: 32px 32px;
+    width: 428px;
+    height: 120px;
+    border-radius: 20px;
+    background: $white1;
+    margin-bottom: 30px;
+
+    &_addEvent {
+      cursor: pointer;
+
+      * {
+        transition: 100ms all;
+        fill: $gray1;
+      }
+
+      &:hover {
+        * {
+          fill: $purple;
+        }
+      }
+    }
+  }
+
+  &_holder {
+    &_card {
+      margin-top: 30px;
+    }
+  }
+}
+
+@media screen and (max-width: 430px) {
+  .scheduleDetails {
+    width: 96vw;
+
+    &_title {
+      width: auto;
+    }
+
+    &_holder {
+      &_card {
+        margin-top: 15px;
+      }
+    }
+  }
+}

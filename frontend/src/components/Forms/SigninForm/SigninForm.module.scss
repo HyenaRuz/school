@@ -1,0 +1,33 @@
+@import "../../../colors.scss";
+
+.personalDetails {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: repeat(4, 1fr);
+  grid-column-gap: 40px;
+  grid-row-gap: 24px;
+
+  &_big {
+    grid-row: span 3;
+  }
+  &_year {
+    display: flex;
+    justify-content: space-between;
+    gap: 24px;
+  }
+
+  &_switchToLogin {
+    display: flex;
+    gap: 10px;
+    color: $text;
+    justify-content: center;
+    grid-column: span 2;
+  }
+}
+
+@media screen and (max-width: 770px) {
+  .personalDetails {
+    display: flex;
+    flex-direction: column;
+  }
+}

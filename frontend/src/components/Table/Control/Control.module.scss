@@ -1,0 +1,70 @@
+@import "../../../colors.scss";
+
+.control {
+  display: flex;
+  justify-content: space-between;
+  padding-bottom: 40px;
+
+  &_input {
+    width: 350px;
+    height: 60px;
+    border-radius: 40px;
+    background: $white1;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 0px 32px 0px 32px;
+    gap: 16px;
+
+    input {
+      width: 100%;
+      font-size: 1.8rem;
+      color: $text;
+    }
+    &_img {
+      width: 32px;
+      height: 32px;
+    }
+  }
+  &_select {
+    width: 230px;
+    height: 60px;
+    padding: 16px 43px;
+    border-radius: 40px;
+    border: 2px solid $purple;
+    font-size: 1.8rem;
+    color: $text;
+  }
+}
+
+@media screen and (max-width: 430px) {
+  .control {
+    padding-bottom: 20px;
+
+    &_input {
+      width: 220px;
+      height: 40px;
+      padding: 0px 15px 0px 15px;
+      gap: 8px;
+      input {
+        font-size: 1.4rem;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 375px) {
+  .control {
+    flex-direction: column;
+    gap: 15px;
+    padding: 0px 10px 20px 10px;
+
+    &_input {
+      width: 100%;
+
+      input {
+        font-size: 1.4rem;
+      }
+    }
+  }
+}

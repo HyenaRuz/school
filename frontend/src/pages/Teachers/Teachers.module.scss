@@ -1,0 +1,67 @@
+@import "../../colors.scss";
+
+.page {
+  &_grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    gap: 40px;
+  }
+}
+
+.teachersCard {
+  border-radius: 20px;
+  width: 338px;
+  height: 352px;
+  background: $white1;
+  display: flex;
+  flex-direction: column;
+  padding: 32px;
+  justify-content: space-between;
+
+  &_wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    align-items: center;
+
+    &_avatar {
+      border-radius: 50%;
+      width: 120px;
+      height: 120px;
+      background-color: $gray2;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-decoration: none;
+      color: $text;
+    }
+    &_name {
+      font-weight: 700;
+      color: $text;
+    }
+  }
+
+  &_contacts {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 16px;
+  }
+}
+
+@media screen and (max-width: 430px) {
+  .page {
+    &_grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 2vw;
+    }
+  }
+
+  .teachersCard{
+    width: 48vw;
+    height: 300px;
+  }
+}

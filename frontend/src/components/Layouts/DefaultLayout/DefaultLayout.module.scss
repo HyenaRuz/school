@@ -1,0 +1,165 @@
+@import "../../../colors.scss";
+
+.wrapper {
+  display: flex;
+}
+
+.holder {
+  width: 100%;
+  height: 100vh;
+  padding: 40px 50px;
+  overflow-y: scroll;
+  position: relative;
+}
+
+.page_content {
+  &_enter {
+    opacity: 0;
+    transform: translateY(20px);
+    &_active {
+      opacity: 1;
+      transform: translateY(0);
+      transition: opacity 300ms ease-in-out, transform 300ms ease-in-out;
+    }
+  }
+
+  &_exit {
+    opacity: 1;
+    transform: translateY(0);
+    &_active {
+      opacity: 0;
+      transform: translateY(-20px);
+      transition: opacity 300ms ease-in-out, transform 300ms ease-in-out;
+    }
+  }
+}
+
+.sideMenu {
+  background-color: $purple;
+  display: flex;
+  flex-direction: column;
+  width: 345px;
+  min-height: 100vh;
+  gap: 50px;
+  padding-top: 50px;
+
+  &_header {
+    color: $white1;
+    text-align: center;
+    display: flex;
+    gap: 16px;
+    align-items: center;
+    justify-content: center;
+  }
+  &_logo {
+    width: 48px;
+    height: 48px;
+    flex-shrink: 0;
+    border-radius: 16px;
+    background: $orange;
+  }
+
+  &_nav {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    width: 345px;
+    gap: 8px;
+
+    &_button {
+      display: flex;
+      padding: 16px 24px;
+      align-items: center;
+      gap: 24px;
+      border-radius: 40px 0px 0px 40px;
+      color: $gray2;
+      width: 299px;
+      cursor: pointer;
+
+      &_icon {
+        width: 40px;
+        height: 40px;
+        & * {
+          fill: $gray2;
+        }
+      }
+    }
+
+    .active_link {
+      color: $purple;
+      background-color: $background;
+    }
+
+    .active_link .nav_button_icon * {
+      fill: $purple;
+    }
+  }
+
+  &_control {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+
+    &_menuIcon {
+      width: 40px;
+      height: 40px;
+      position: relative;
+      cursor: pointer;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      gap: 5px;
+
+      &_bar {
+        width: 100%;
+        height: 4px;
+        background-color: $white1;
+        transition: all 0.3s ease;
+        border-radius: 500px;
+      }
+
+      .cross &_bar:nth-child(1) {
+        transform: translateY(9px) rotate(45deg);
+      }
+
+      .cross &_bar:nth-child(2) {
+        opacity: 0;
+      }
+
+      .cross &_bar:nth-child(3) {
+        transform: translateY(-9px) rotate(-45deg);
+      }
+    }
+
+    &.active {
+    }
+  }
+}
+
+@media screen and (max-width: 1700px) {
+  .holder {
+    padding: 40px 50px 40px 150px;
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  .holder {
+    padding: 35px 30px 35px 110px;
+  }
+}
+
+@media screen and (max-width: 770px) {
+  .holder {
+    padding: 3% 3% calc(3% + 80px) 3%;
+  }
+}
+@media screen and (max-width: 430px) {
+  .holder {
+    padding: 2% 2% calc(2% + 80px) 2%;
+  }
+}
+@media screen and (max-width: 320px) {
+  .holder {
+    padding: 2% 0% calc(2% + 80px) 0%;
+  }
+}

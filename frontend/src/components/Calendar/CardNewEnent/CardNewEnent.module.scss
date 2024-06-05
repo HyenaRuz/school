@@ -1,0 +1,20 @@
+@import "../../../colors.scss";
+
+.cardNewEnent {
+  width: 428px;
+  padding: 32px;
+  border-radius: 20px;
+  background: $white1;
+  color: $main;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  overflow: hidden;
+}
+
+@media screen and (max-width: 430px) {
+  .cardNewEnent {
+    width: auto;
+  }
+}

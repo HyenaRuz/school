@@ -1,0 +1,129 @@
+@import "../../colors.scss";
+
+.header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding-bottom: 40px;
+
+  &_title {
+    color: $text;
+  }
+}
+
+.modalContent {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  width: 327px;
+  height: 654px;
+  padding: 20px;
+}
+
+.wrapper {
+  display: flex;
+  gap: 24px;
+
+  &_circle {
+    width: 60px;
+    height: 60px;
+    border-radius: 40px;
+    background-color: $white1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    position: relative;
+    transition: 400ms all;
+
+    &.active {
+      transform: rotate(180deg);
+      border: $purple 3px solid;
+      z-index: 101;
+
+      svg * {
+        fill: $purple;
+      }
+    }
+  }
+
+  &_icon {
+    width: 32px;
+    height: 32px;
+    & * {
+      fill: $gray3;
+    }
+  }
+
+  &_indicator {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+  }
+
+  &_user {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+
+    &_text {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+      gap: 4px;
+
+      &_name {
+        color: $text;
+        font-weight: 600;
+      }
+      &_role {
+        color: $gray3;
+        font-weight: 400;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 770px) {
+  .header {
+    padding: 0 10px 20px 10px;
+    align-items: center;
+  }
+
+  .wrapper {
+    &_circle {
+      width: 50px;
+      height: 50px;
+    }
+  }
+}
+@media screen and (max-width: 430px) {
+  .wrapper {
+    &_circle {
+      width: 40px;
+      height: 40px;
+    }
+
+    &_icon {
+      width: 28px;
+      height: 28px;
+    }
+
+    &_indicator {
+      top: 4px;
+      right: 4px;
+    }
+  }
+
+  .modalContent {
+    width: 327px;
+    height: min-content;
+    padding: 20px;
+  }
+}
+@media screen and (max-width: 320px) {
+  .modalContent {
+    width: 100vw;
+    margin: 0 -10px 0 -10px;
+  }
+}

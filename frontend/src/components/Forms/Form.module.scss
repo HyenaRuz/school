@@ -1,0 +1,43 @@
+@import "../../colors.scss";
+
+.login {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+
+  &_switchToSignup {
+    display: flex;
+    gap: 10px;
+    color: $text;
+    justify-content: center;
+  }
+}
+
+.updateEventForm {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  height: 210px;
+  justify-content: space-between;
+}
+
+.personalDetails {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-column-gap: 40px;
+  grid-row-gap: 24px;
+
+  &_year {
+    display: flex;
+    justify-content: space-between;
+    gap: 24px;
+  }
+}
+
+@media screen and (max-width: 950px) {
+  .personalDetails {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+}
