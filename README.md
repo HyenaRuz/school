@@ -58,3 +58,27 @@ To populate the database with default accounts and events:
 
 ```sh
 docker-compose exec backend npm run seed
+```
+
+## Credentials
+
+### General password
+- **Password**: `password`
+
+### Teacher 1
+- Email: `teacher1@example.com`
+- Students:
+  - `student1_1@example.com`
+  - `student1_2@example.com`
+  - `student1_3@example.com`
+  - `student1_4@example.com`
+  - `student1_5@example.com`
+
+### Teacher 2
+- Email: `teacher2@example.com`
+- Students:
+  - `student2_1@example.com`
+  - `student2_2@example.com`
+  - `student2_3@example.com`
+  - `student2_4@example.com`
+  - `student2_5@example.com`
