@@ -92,7 +92,7 @@ function SideMenu({ student = false }) {
           [styles.active]: isCross,
         })}
       >
-        <LanguageSwitch />
+        <LanguageSwitch column={isCross} />
       </div>
     </div>
   );

@@ -4,7 +4,7 @@ import { setLocale } from "../../store/slice/LocalizationSlice";
 import styles from "./LanguageSwitch.module.scss";
 import classNames from "classnames";
 
-const LanguageSwitch = () => {
+const LanguageSwitch = ({ column }) => {
   const [active, setActive] = useState(true);
 
   const dispatch = useDispatch();
@@ -19,7 +19,7 @@ const LanguageSwitch = () => {
 
   useEffect(() => {
     setDefaultLocale();
-  // eslint-disable-next-line react-hooks/exhaustive-deps
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   const handleChangeLanguage = (newLocale) => {
@@ -27,7 +27,10 @@ const LanguageSwitch = () => {
   };
 
   return (
-    <div className={styles.switch}>
+    <div
+      className={styles.switch}
+      style={{ flexDirection: column ? "column" : "row" }}
+    >
       <button
         className={classNames(styles.switch_button, {
           [styles.active]: active,

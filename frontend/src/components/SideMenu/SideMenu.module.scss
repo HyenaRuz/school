@@ -4,12 +4,14 @@
   background-color: $purple;
   display: flex;
   flex-direction: column;
-  width: 345px;
+  width: 410px;
   min-height: 100vh;
   gap: 50px;
-  padding-top: 70px;
-  padding-bottom: 70px;
+
+  padding: 70px 20px 70px 20px;
   position: relative;
+  overflow: hidden;
+
   transition: all 300ms ease;
   justify-content: space-between;
   height: 100vh;
@@ -19,58 +21,11 @@
 
     .sideMenu {
       &_nav {
-        width: auto;
-
         &_button {
-          width: 90px;
-
           h5 {
-            position: absolute;
+            transition: all 200ms ease;
             opacity: 0;
           }
-        }
-      }
-    }
-  }
-
-  &_header {
-    color: $white1;
-    text-align: center;
-    display: flex;
-    gap: 16px;
-    align-items: center;
-    justify-content: center;
-    overflow: hidden;
-    position: relative;
-
-    &_logo {
-      width: 48px;
-      height: 48px;
-      flex-shrink: 0;
-      border-radius: 16px;
-      background: $orange;
-      transition: all 300ms;
-    }
-
-    &_title {
-      position: absolute;
-      opacity: 0;
-      pointer-events: none;
-
-      &.active {
-        animation: fadeIn 600ms ease forwards;
-        animation-delay: 300ms;
-      }
-
-      @keyframes fadeIn {
-        from {
-          opacity: 0;
-          transform: translateX(200px);
-        }
-        to {
-          opacity: 1;
-          position: relative;
-          transform: translateX(0px);
         }
       }
     }
@@ -80,17 +35,17 @@
     display: flex;
     flex-direction: column;
     align-items: flex-end;
-    width: 345px;
+    width: 325px;
     gap: 8px;
 
     &_button {
       display: flex;
-      padding: 16px 24px;
+      padding: 16px 10px;
       align-items: center;
       gap: 24px;
       border-radius: 40px 0px 0px 40px;
       color: $gray2;
-      width: 299px;
+      width: 100%;
       cursor: pointer;
 
       &_icon {
@@ -112,13 +67,47 @@
     }
   }
 
+  &_header {
+    color: $white1;
+    text-align: center;
+    display: flex;
+    gap: 16px;
+    align-items: center;
+    // justify-content: center;
+
+    justify-content: flex-start;
+    width: 100%;
+    padding: 5px;
+
+    overflow: hidden;
+    position: relative;
+    // transition: all 300ms ease-in-out;
+
+    &_logo {
+      width: 48px;
+      height: 48px;
+      flex-shrink: 0;
+      border-radius: 16px;
+      background: $orange;
+    }
+
+    &_title {
+      // position: absolute;
+      opacity: 0;
+      pointer-events: none;
+      white-space: nowrap;
+
+      &.active {
+        position: relative;
+        opacity: 1;
+      }
+    }
+  }
+
   &_control {
     display: flex;
     align-items: center;
     justify-content: space-around;
-
-    // &.active {
-    // }
   }
   &_menuIcon {
     width: 40px;
@@ -131,7 +120,8 @@
 
     position: absolute;
     top: 15px;
-    right: 30px;
+    right: 50px;
+    transform: translateX(50%);
 
     &_bar {
       width: 100%;
